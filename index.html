@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PhotoCard Studio – Tạo ảnh thẻ</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div><h1>PhotoCard Studio</h1><p>Tạo ảnh thẻ nhanh • xử lý ngay trên trình duyệt</p></div>
+  <button id="themeBtn" class="icon-btn">☾</button>
+</header>
+
+<main class="app">
+<section class="panel controls">
+<h2>1. Chọn ảnh</h2>
+<label class="upload">
+  <input id="fileInput" type="file" accept="image/*">
+  <span>📷 Chọn ảnh từ máy</span><small>JPG, PNG, WEBP</small>
+</label>
+
+<div id="editor" class="editor disabled">
+<h2>2. Căn chỉnh</h2>
+<div class="row">
+  <label>Vị trí X <input id="posX" type="range" min="-100" max="100" value="0"></label>
+  <label>Vị trí Y <input id="posY" type="range" min="-100" max="100" value="0"></label>
+</div>
+<div class="row">
+  <label>Thu phóng <input id="zoom" type="range" min="50" max="180" value="100"></label>
+  <button id="resetBtn" class="secondary">Đặt lại</button>
+</div>
+
+<h2>3. Cài đặt ảnh thẻ</h2>
+<div class="grid">
+<label>Kích thước
+<select id="size"><option value="2x3">2 × 3 cm</option><option value="3x4" selected>3 × 4 cm</option><option value="4x6">4 × 6 cm</option></select>
+</label>
+<label>Nền
+<select id="bg"><option value="#ffffff">Trắng</option><option value="#dff0ff">Xanh nhạt</option><option value="#bfe3ff">Xanh</option><option value="#f4eeee">Đỏ nhạt</option></select>
+</label>
+<label>Chất lượng
+<select id="quality"><option value="1">Cao</option><option value="0.9" selected>Tiêu chuẩn</option><option value="0.75">Nhẹ</option></select>
+</label>
+</div>
+
+<div class="actions">
+<button id="downloadBtn" class="primary">⬇ Tải ảnh thẻ</button>
+<button id="sheetBtn" class="secondary">▦ Tạo trang A4</button>
+</div>
+<p class="note">Ảnh được xử lý cục bộ trên thiết bị của bạn, không tải lên máy chủ.</p>
+</div>
+</section>
+
+<section class="panel preview-panel">
+<div class="preview-head"><h2>Xem trước</h2><span id="status">Chưa có ảnh</span></div>
+<div class="preview-wrap"><canvas id="canvas"></canvas><div id="empty">Tải một ảnh chân dung để bắt đầu</div></div>
+<div class="info"><span id="dimension">—</span><span id="fileName">—</span></div>
+</section>
+</main>
+<footer>PhotoCard Studio • HTML/CSS/JS • GitHub Pages</footer>
+<script src="script.js"></script>
+</body>
+</html>
